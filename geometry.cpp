@@ -168,11 +168,6 @@ bool Ray::ContainsPoint(const Point& k_second) const {
   vect = b_ - a_;
   Vector add;
   add = k_second - a_;
-  //   return ((second.GetX() - a_.GetX()) * (b_.GetY() - a_.GetY()) ==
-  //               (b_.GetX() - a_.GetX()) * (second.GetY() - a_.GetY()) &&
-  //           ((second.GetX() - a_.GetX()) * (b_.GetY() - a_.GetY()) >= 0) &&
-  //           (b_.GetX() - a_.GetX()) * (second.GetY() - a_.GetY()) >= 0);
-  // }
   return ((vect ^ add) == 0 && (vect * add) >= 0);
 }
 bool Ray::CrossSegment(const Segment& k_second) const {
